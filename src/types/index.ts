@@ -6,6 +6,9 @@
 /**
  * Interface for logger options, specifying required options for initialization.
  * @interface LoggerOptions
+ * @property {string} [level='info'] - The default log level.
+ * @property {string} newRelicApiKey - The New Relic API Key
+ * @property {string} newRelicApplicationId - The New Relic Application ID
  */
 
 export interface LoggerOption {
