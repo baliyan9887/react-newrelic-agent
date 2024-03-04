@@ -1,8 +1,33 @@
-export function generateNewRelicScript(
-  accountId: string,
-  applicationId: string,
-  licenseKey: string
-): string {
+"use strict";
+var __defProp = Object.defineProperty;
+var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+var __getOwnPropNames = Object.getOwnPropertyNames;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __export = (target, all) => {
+  for (var name in all)
+    __defProp(target, name, { get: all[name], enumerable: true });
+};
+var __copyProps = (to, from, except, desc) => {
+  if (from && typeof from === "object" || typeof from === "function") {
+    for (let key of __getOwnPropNames(from))
+      if (!__hasOwnProp.call(to, key) && key !== except)
+        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+  }
+  return to;
+};
+var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
+
+// src/index.ts
+var src_exports = {};
+__export(src_exports, {
+  init: () => init,
+  relicLogger: () => relicLogger,
+  runTest: () => runTest
+});
+module.exports = __toCommonJS(src_exports);
+
+// src/library/loggerService.ts
+function generateNewRelicScript(accountId, applicationId, licenseKey) {
   return `
   window.NREUM || (NREUM = {})
   NREUM.init = {
@@ -404,7 +429,7 @@ export function generateNewRelicScript(
             u = /iPad|iPhone|iPod/.test(o.navigator?.userAgent),
             d = u && 'undefined' == typeof SharedWorker,
             l = (() => {
-              const e = o.navigator?.userAgent?.match(/Firefox[/\s](\d+\.\d+)/)
+              const e = o.navigator?.userAgent?.match(/Firefox[/s](d+.d+)/)
               return Array.isArray(e) && e.length >= 2 ? +e[1] : 0
             })(),
             f = Boolean(n && window.document.documentMode),
@@ -1230,8 +1255,8 @@ export function generateNewRelicScript(
             j[t.debugId] = !0
             var r = c(t),
               i = /[?&](?:callback|cb)=([^&#]+)/,
-              o = /(.*)\.([^.]+)/,
-              a = /^(\w+)(\.|$)(.*)$/
+              o = /(.*).([^.]+)/,
+              a = /^(w+)(.|$)(.*)$/
             function s(e, t) {
               if (!e) return t
               const r = e.match(a),
@@ -3422,5 +3447,85 @@ export function generateNewRelicScript(
       })()
   })()
   
-  `
+  `;
 }
+
+// src/utils/init.ts
+var initializeNewRelic = (accountId, applicationId, licenseKey) => {
+  const newRelicScript = generateNewRelicScript(
+    accountId,
+    applicationId,
+    licenseKey
+  );
+  const scriptElement = document.createElement("script");
+  scriptElement.type = "text/javascript";
+  scriptElement.textContent = newRelicScript;
+  document.head.appendChild(scriptElement);
+};
+
+// src/constants/index.ts
+var LOGGER_CATEGORY = {
+  DEFAULT: "Default"
+  // Add more categories as needed...
+};
+var LOGGER_TAGS = {
+  INFO: "info",
+  WARNING: "warning",
+  ERROR: "error"
+};
+
+// src/utils/newRelicLogger.ts
+var NewRelicLogger = class {
+  options;
+  constructor(options = {}) {
+    this.options = {
+      isEnabled: true,
+      customErrorHandler: void 0,
+      ...options
+    };
+  }
+  log(message, module2, category = LOGGER_CATEGORY.DEFAULT, level = LOGGER_TAGS.INFO) {
+    const logMessage = `[${level.toUpperCase()}] | Category: ${category} | Module: ${module2} | Error: ${String(
+      message
+    )}`;
+    if (this.options.isEnabled) {
+      if (this.options.customErrorHandler) {
+        try {
+          this.options.customErrorHandler(logMessage);
+        } catch (error) {
+          console.error("Error in custom error handler:", error);
+        }
+      } else {
+        console.log(logMessage);
+      }
+      if (window?.newrelic && process.env.NODE_ENV === "production") {
+        ;
+        window?.newrelic.noticeError(logMessage);
+      }
+    }
+  }
+  logInfo(message, module2, category = LOGGER_CATEGORY.DEFAULT) {
+    this.log(message, module2, category, LOGGER_TAGS.INFO);
+  }
+  logWarning(message, module2, category = LOGGER_CATEGORY.DEFAULT) {
+    this.log(message, module2, category, LOGGER_TAGS.WARNING);
+  }
+  logError(message, module2, category = LOGGER_CATEGORY.DEFAULT) {
+    this.log(message, module2, category, LOGGER_TAGS.ERROR);
+  }
+};
+var newRelicLogger_default = NewRelicLogger;
+
+// src/index.ts
+var newRelicLogger = new newRelicLogger_default();
+var init = initializeNewRelic;
+var relicLogger = newRelicLogger;
+var runTest = () => {
+  console.log("Linking and runing...");
+};
+// Annotate the CommonJS export names for ESM import in node:
+0 && (module.exports = {
+  init,
+  relicLogger,
+  runTest
+});
