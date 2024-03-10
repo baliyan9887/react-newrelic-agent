@@ -1,8 +1,17 @@
-export function generateNewRelicScript(
+/**
+ * Generates a New Relic script with the specified configuration.
+ *
+ * @param {string} accountId - The New Relic account ID.
+ * @param {string} applicationId - The New Relic application ID.
+ * @param {string} licenseKey - The license key for New Relic.
+ * @returns {string} The generated New Relic script.
+ */
+export default function generateNewRelicScript(
   accountId: string,
   applicationId: string,
   licenseKey: string
 ): string {
+  // If NREUM is not already defined, initialize it as an empty object
   return `
   window.NREUM || (NREUM = {})
   NREUM.init = {
