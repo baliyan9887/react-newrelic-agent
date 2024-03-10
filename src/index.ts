@@ -1,7 +1,12 @@
-import { initializeNewRelic } from './utils/init'
-import NewRelicLogger from './utils/newRelicLogger'
+/**
+ * @file New Relic Integration Package
+ * @description
+ * This package provides comprehensive New Relic integration for your application.
+ * It exports modules from the 'modules' folder, including initialization for browser monitoring
+ * and a New Relic Logger.
+ *
+ * @module NewRelicIntegration
+ */
 
-const loggerInstance = new NewRelicLogger()
-
-export const initRelicBrowserAgent = initializeNewRelic
-export const logger = loggerInstance
+// export everything from the 'modules' folder
+export * from './modules'
