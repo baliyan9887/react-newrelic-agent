@@ -1,10 +1,7 @@
 import { initializeNewRelic } from './utils/init'
 import NewRelicLogger from './utils/newRelicLogger'
 
-const newRelicLogger = new NewRelicLogger()
+const loggerInstance = new NewRelicLogger()
 
-export const init = initializeNewRelic
-export const relicLogger = newRelicLogger
-export const runTest = () => {
-  console.log('Linking and runing...')
-}
+export const initRelicBrowserAgent = initializeNewRelic
+export const logger = loggerInstance

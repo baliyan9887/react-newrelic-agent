@@ -12,7 +12,14 @@
  */
 
 export interface LoggerOption {
-  level?: string;
-  newRelicApiKey: string;
-  newRelicApplicationId: string;
+  level?: string
+  newRelicApiKey: string
+  newRelicApplicationId: string
+}
+
+export interface RequestOptions {
+  method: string
+  url: string
+  headers?: { [key: string]: string }
+  body?: string
 }
