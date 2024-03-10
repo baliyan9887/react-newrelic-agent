@@ -1,3 +1,9 @@
+/**
+ * @file tsconfig.js
+ * @description
+ * TypeScript configuration file for the project.
+ * This configuration specifies compiler options and file inclusion patterns.
+ */
 {
   "compilerOptions": {
     "types": ["node"],

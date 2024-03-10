@@ -1,3 +1,10 @@
+/**
+ * @file eslintrc
+ * @description
+ * ESLint configuration file for a TypeScript project using the airbnb-base style,
+ * TypeScript-specific rules, and Prettier for consistent code formatting.
+ */
+
 {
   "parser": "@typescript-eslint/parser",
   "extends": [
