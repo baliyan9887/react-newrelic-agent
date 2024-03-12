@@ -8,8 +8,7 @@
 import { initializeNewRelic } from '../utils/init'
 
 // Import New Relic Logger class from the utils folder
-import NewRelicLogger from '../utils/newRelicLogger'
-
+import NewRelicLogger from '../logger'
 // Create an instance of the New Relic Logger
 const loggerInstance = new NewRelicLogger()
 
