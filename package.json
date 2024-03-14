@@ -1,7 +1,7 @@
 {
-  "name": "react-relic-sdk",
+  "name": "react-relic-agent",
   "version": "1.0.0",
-  "description": "relic logger sdk",
+  "description": "A React integration SDK for New Relic monitoring, simplifying setup and customization.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -15,21 +15,21 @@
     "check-types": "tsc --noEmit"
   },
   "keywords": [
-    "relic",
-    "relic-react"
+    "new relic",
+    "react",
+    "monitoring",
+    "browser monitoring",
+    "performance monitoring",
+    "react sdk",
+    "new relic browser"
   ],
-  "author": "Gautam",
+  "author": "baliyangk - Gautam Kumar",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.7",
-    "https-browserify": "^1.0.0",
-    "newrelic": "^11.11.0",
-    "stream-http": "^3.2.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
-    "undici-types": "^6.6.2",
-    "whatwg-fetch": "^3.6.20",
-    "winston": "^3.11.0"
+    "whatwg-fetch": "^3.6.20"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.0.3",
