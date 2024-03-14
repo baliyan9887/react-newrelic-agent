@@ -1,10 +1,13 @@
 {
-  "name": "react-relic-agent",
-  "version": "1.0.0",
+  "name": "react-newrelic-agent",
+  "version": "1.2.0",
   "description": "A React integration SDK for New Relic monitoring, simplifying setup and customization.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "repository": {
+    "url": "https://github.com/baliyan9887/newrelic-react-sdk"
+  },
   "scripts": {
     "lint": "eslint '**/*.ts'",
     "lint:fix": "eslint '**/*.ts' --fix",

@@ -1,0 +1,16 @@
+/src
+/node_modules
+
+.env
+.DS_Store
+.eslintignore
+.eslintrc
+.prettierignore
+.prettierrc
+.husky
+
+
+tsconfig.json
+tsup.config.ts
+lint-staged.config.js
+commitlint.config.js
