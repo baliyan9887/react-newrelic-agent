@@ -38,3 +38,23 @@ initRelicBrowserAgent({
   ApiLicenseKey: 'YOUR_API_LICENSE_KEY' // Optional
 })
 ```
+
+## Logging Events
+
+You can log custom events or errors using the logger instance:
+
+```javascript
+import { logger } from 'react-relic-agent'
+
+// Log a custom event
+logger.logEvent('UserRegistration', {
+  username: 'johndoe',
+  plan: 'premium'
+})
+
+// Log an error
+logger.logError(new Error('Something went wrong'), {
+  page: 'SignUp',
+  severity: 'critical'
+})
+```
