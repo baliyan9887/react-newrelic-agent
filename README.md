@@ -34,8 +34,8 @@ initRelicBrowserAgent({
   accountId: 'YOUR_ACCOUNT_ID',
   applicationId: 'YOUR_APPLICATION_ID',
   browserLicenseKey: 'YOUR_BROWSER_LICENSE_KEY',
-  appName: 'YOUR_APPLICATION_NAME', // Optional
-  ApiLicenseKey: 'YOUR_API_LICENSE_KEY' // Optional
+  ApiLicenseKey: 'YOUR_API_LICENSE_KEY', // Optional
+  appName: 'YOUR_APPLICATION_NAME' // Optional
 })
 ```
 
@@ -58,3 +58,33 @@ logger.logError(new Error('Something went wrong'), {
   severity: 'critical'
 })
 ```
+
+## API Reference
+
+### initRelicBrowserAgent(params)
+
+Initializes the New Relic Browser agent with the provided configuration.
+
+| Params                   | Description                         |
+| ------------------------ | ----------------------------------- |
+| accountid                | Your New Relic Account ID.          |
+| applicationId            | Your New Relic Application ID.      |
+| browserLicenseKey        | Your New Relic Browser License Key. |
+| ApiLicenseKey (Optional) | Your New Relic API License Key.     |
+| appName (Optional):      | Your application name.              |
+
+### logger
+
+The `logger` object exposes methods for logging events and errors.
+
+`logEvent(eventName, attributes): Logs a custom event.`
+| Params | Description |
+| ------ | ------ |
+| eventName | The name of the event. |
+| attributes | An object containing attributes of the event. |
+
+`logError(error, attributes): Logs an error.`
+| Params | Description |
+| ------ | ------ |
+| error | The error object. |
+| attributes | An object containing additional attributes about the error context. |
