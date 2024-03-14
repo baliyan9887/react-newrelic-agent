@@ -41,8 +41,8 @@ import {
  *   accountId: 'yourAccountId',
  *   applicationId: 'yourApplicationId',
  *   browserLicenseKey: 'yourBrowserLicenseKey',
- *   appName: 'yourAppName',
- *   ApiLicenseKey: 'yourApiLicenseKey'
+ *   ApiLicenseKey: 'yourApiLicenseKey',
+ *   appName: 'yourAppName'
  * });
  *
  * @see {@link https://docs.newrelic.com/docs/browser/new-relic-browser/getting-started/introduction-new-relic-browser New Relic Browser Documentation}
