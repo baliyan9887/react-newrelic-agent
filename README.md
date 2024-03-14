@@ -127,3 +127,19 @@ logError(error, attributes): //Logs an error.
 | ---------- | ------------------------------------------------------------------- |
 | error      | The error object.                                                   |
 | attributes | An object containing additional attributes about the error context. |
+
+## Supported Browsers
+
+Relic's supported browser list can be accessed [here](https://docs.newrelic.com/docs/browser/new-relic-browser/getting-started/compatibility-requirements-browser-monitoring/#browser-types).
+
+## Library Compatibility
+
+The browser agent is designed to work seamlessly with any JavaScript library or framework you may be using. It provides a set of API methods that can easily integrate into your chosen library or framework. For example, you can export or expose the initialized agent and create a new error boundary within your React application to handle errors using the `reactRelicAgent.noticeError()` method.
+
+### Server-Side Rendering
+
+Many modern frameworks support server-side rendering, which can significantly improve search engine optimization (SEO) and user experience performance. It's important to understand that the browser agent needs to be imported and set up within a browser environment. It won't function properly if it's executed on a server or within the server context of a server-side rendered application. Most frameworks offer ways to ensure that certain code runs only on the client side. Be sure to consult your framework's documentation for guidance on how to handle this.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
