@@ -22,3 +22,19 @@ or using yarn
 ```bash
 yarn add react-relic-agent
 ```
+
+## Usage
+
+First, import and initialize the New Relic agent in your React application. Typically, this should be done as early as possible in your application's entry point:
+
+```javascript
+import { initRelicBrowserAgent } from 'react-relic-agent'
+
+initRelicBrowserAgent({
+  accountId: 'YOUR_ACCOUNT_ID',
+  applicationId: 'YOUR_APPLICATION_ID',
+  browserLicenseKey: 'YOUR_BROWSER_LICENSE_KEY',
+  appName: 'YOUR_APPLICATION_NAME', // Optional
+  ApiLicenseKey: 'YOUR_API_LICENSE_KEY' // Optional
+})
+```
