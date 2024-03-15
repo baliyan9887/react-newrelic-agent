@@ -128,6 +128,34 @@ logError(error, attributes): //Logs an error.
 | error      | The error object.                                                   |
 | attributes | An object containing additional attributes about the error context. |
 
+## Querying Data in New Relic
+
+To query data in New Relic, follow these steps:
+
+1. **Log in to New Relic**: Visit the [New Relic website](https://one.newrelic.com/) and log in to your account.
+
+2. **Select the Application or Infrastructure**: Depending on what type of data you want to query (e.g., application performance, infrastructure metrics), select the appropriate application or infrastructure from the New Relic user interface.
+
+3. **Navigate to the Data Explorer or Insights Dashboard**: Find the section in New Relic's UI where you can run queries. This might be labeled as "Data Explorer," "Insights," or something similar.
+
+4. **Write Your Query**: Use New Relic Query Language (NRQL) to write your query. NRQL syntax resembles SQL but is tailored to work with New Relic's data model. You can query various types of data, such as metrics, events, logs, and traces.
+
+   Here's an example NRQL query to retrieve the average response time for a specific application:
+
+```sql
+-- Last 24 Hours
+SELECT * FROM  RelicLogger(or you appName) SINCE 1 day ago
+
+-- Last 7 Days
+SELECT * FROM  RelicLogger(or you appName) SINCE 7 days ago
+```
+
+**Run the Query:** After writing your query, execute it to retrieve the data. New Relic will return the results based on your query parameters.
+
+**Analyze the Results:** Once you have the results, analyze them to gain insights into your application or infrastructure performance. You can visualize the data, create charts, set up alerts, and more within New Relic's platform.
+
+Remember that the specific steps and options may vary slightly depending on the version of New Relic you're using and the features available in your subscription plan. If you're unsure about anything or need assistance with a specific query, [New Relic's documentation](https://docs.newrelic.com/docs/query-your-data/explore-query-data/get-started/introduction-querying-new-relic-data/) and support resources are valuable references.
+
 ## Supported Browsers
 
 Relic's supported browser list can be accessed [here](https://docs.newrelic.com/docs/browser/new-relic-browser/getting-started/compatibility-requirements-browser-monitoring/#browser-types).

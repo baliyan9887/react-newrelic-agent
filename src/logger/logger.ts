@@ -81,6 +81,11 @@ class Logger {
    * @param {Log} params - The parameters containing the event and message to log.
    */
   public logError(params: Log) {
+    ;(window as any)?.newrelic.noticeError(
+      params.event,
+      params.message,
+      LOGGER_TAGS.ERROR
+    )
     this.log(params.event, params.message, LOGGER_TAGS.ERROR)
   }
 }
