@@ -171,4 +171,3 @@ Many modern frameworks support server-side rendering, which can significantly im
 ## License
 
 This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
-s
