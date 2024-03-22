@@ -1,6 +1,6 @@
 {
   "name": "react-newrelic-agent",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A React integration SDK for New Relic monitoring, simplifying setup and customization.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -18,6 +18,7 @@
     "check-types": "tsc --noEmit"
   },
   "keywords": [
+    "react new-relic agent",
     "new relic",
     "react",
     "monitoring",
