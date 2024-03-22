@@ -14,13 +14,13 @@ A comprehensive SDK for integrating New Relic monitoring into React applications
 Install `react-relic-agent` using npm:
 
 ```bash
-npm install react-relic-agent
+npm i react-newrelic-agent
 ```
 
 or using yarn
 
 ```bash
-yarn add react-relic-agent
+yarn add react-newrelic-agent
 ```
 
 ## Creating an app in New Relic
