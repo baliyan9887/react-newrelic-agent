@@ -1,6 +1,6 @@
 # React New-Relic Agent
 
-A comprehensive SDK for integrating New Relic monitoring into React applications. `react-relic-agent` simplifies the process of setting up New Relic for browser monitoring, providing React developers with an easy-to-use interface for sending custom events, metrics, and logs.
+A comprehensive SDK for integrating New Relic monitoring into React applications. `react-newrelic-agent` simplifies the process of setting up New Relic for browser monitoring, providing React developers with an easy-to-use interface for sending custom events, metrics, and logs.
 
 ## Features
 
@@ -11,7 +11,7 @@ A comprehensive SDK for integrating New Relic monitoring into React applications
 
 ## Installation
 
-Install `react-relic-agent` using npm:
+Install `react-newrelic-agent` using npm:
 
 ```bash
 npm i react-newrelic-agent
@@ -53,7 +53,7 @@ NREUM.loader_config = {
 }
 
 // Initialize New Relic Browser agent with the obtained configuration
-import { initRelicBrowserAgent } from 'react-relic-agent'
+import { initRelicBrowserAgent } from 'react-newrelic-agent'
 
 initRelicBrowserAgent({
   accountId: '123456',
@@ -77,7 +77,7 @@ initRelicBrowserAgent({
 You can log custom events or errors using the logger instance:
 
 ```javascript
-import { logger } from 'react-relic-agent'
+import { logger } from 'react-newrelic-agent'
 
 // Log a custom event
 logger.logEvent('UserRegistration', {
